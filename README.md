@@ -1,2 +1,1 @@
-# Prise---API
-Prise backend code.
+A school management system
