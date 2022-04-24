@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+    dev:
+        container_name: prise---api
+        image: prise---api:1.0.0
+        build:
+            context: .
+            # target: development
+            dockerfile: ./Dockerfile
+            
+        command: npm run start:debug
+        ports:
+            - 3000:3000
+            - 9060:9060
+        environment: 
+            NODE_ENV: development
+           # PORT: 9060
+
+        volumes: 
+            - .:/usr/src/app
+            - /usr/src/app/node_modules
+        restart: always
+        # networks:
+        #     - nesjs-network
+        # db:
+        #     image: mongo:latest
+        #     ports:
+        #     - 27017:27017
